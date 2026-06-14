@@ -12,3 +12,10 @@ font-family: inherit;
 background: initial;
 border: initial;
 }
+
+.content {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(16px, 3dvw, 32px);
+}
