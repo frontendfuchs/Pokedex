@@ -16,7 +16,7 @@ async function renderPokemonCards(pokemonList) {
         const pokemonResponse = await fetch(pokemonList[i].url);
         const pokemonData = await pokemonResponse.json();
 
-        container.innerHTML += `<div>${pokemonData.name}</div>`;
+        container.innerHTML += getPokemonCardTemplate(pokemonData);
     }
 }
 
