@@ -1,16 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
-    <link rel="icon" type="image/x-icon" href="./assets/images/pokeball-icon.svg">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/images/pokeball-icon.svg"
+    />
     <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="standard.css"/>
-    
+    <link rel="stylesheet" href="./styles/standard.css"/>
+
     <script src="main.js" defer></script>
-</head>
-<body>
-    
-</body>
+    <script src="/scripts/template.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="content">
+        <div class="header-content">
+          <div class="header-logo">
+            <img src="./assets/images/pokedex-logo.png" alt="Pokedex Logo" />
+          </div>
+          <div class="searchbar">
+            <input type="text" name="search" placeholder="Pokémon suchen">
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+        <section>
+            <div class="content">
+                <div id="pokemon-cards-container">
+            </div>
+        </section>
+        <dialog id="dialog"></dialog>
+    </main>
+    <footer>
+        <img src="./assets/images/pokedex-footer1.png" alt="pokedex logo">
+    </footer>
+  </body>
 </html>
