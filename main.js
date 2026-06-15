@@ -17,21 +17,29 @@ async function renderPokemonCards(pokemonList) {
         const pokemonResponse = await fetch(pokemonList[index].url);
         const pokemonData = await pokemonResponse.json();
         
+        const pokemonTypes = getPokemonTypes(pokemonData);
+        containerRef.innerHTML += getPokemonCardTemplate(pokemonData,index,pokemonTypes[0]);
+        const pokemonType = renderPokemonTypes(pokemonTypes,index);
+    }
+}
 
-        containerRef.innerHTML += getPokemonCardTemplate(pokemonData,index);
-        renderPokemonTypes(pokemonData,index)
+
+function getPokemonTypes(pokemonData){
+    let pokemonTypes = [];
+    
+    for (let typeIndex = 0; typeIndex < pokemonData.types.length; typeIndex++) {
+        pokemonTypes.push(pokemonData.types[typeIndex].type.name);         
+    }
+    return pokemonTypes;
+}
+
+function renderPokemonTypes(pokemonTypes,index){
+    const pokemonTypesRef = document.getElementById(`pokemon-types-${index}`);
+    pokemonTypesRef.innerHTML="";
+    
+    for (pokemonType of pokemonTypes) {
+        pokemonTypesRef.innerHTML += getPokemonTypesTemplate(pokemonType) 
     }
 }
 
 getData();
-
-function renderPokemonTypes(pokemonData,index){
-    const pokemonTypesRef = document.getElementById(`pokemon-types-${index}`);
-    pokemonTypesRef.innerHTML="";
-
-    for (let typeIndex = 0; typeIndex < pokemonData.types.length; typeIndex++) {
-        let pokemonType = pokemonData.types[typeIndex].type.name;
-        pokemonTypesRef.innerHTML += getPokemonTypesTemplate(pokemonType)    
-    }
-}
-

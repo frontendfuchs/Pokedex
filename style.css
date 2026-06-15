@@ -34,6 +34,112 @@ header {
   }
 }
 
+/* Pokemon-Cards */
+.pokemon-type-grass{
+  background-color: green;
+  border-radius: 10%;
+}
+
+.pokemon-type-poison{
+  background-color: purple;
+  border-radius: 10%;
+}
+
+.pokemon-type-fire{
+  background-color: red;
+  border-radius: 10%;
+}
+
+.pokemon-type-flying{
+  background-color: skyblue;
+  border-radius: 10%;
+}
+
+.pokemon-type-water{
+  background-color: blue;
+  border-radius: 10%;
+}
+
+.pokemon-type-bug{
+  background-color: olive;
+  border-radius: 10%;
+}
+
+.pokemon-type-normal{
+  background-color: gray;
+  border-radius: 10%;
+}
+
+.pokemon-type-electric{
+  background-color: gold;
+  border-radius: 10%;
+}
+
+.pokemon-type-ground{
+  background-color: peru;
+  border-radius: 10%;
+}
+
+.pokemon-type-fairy{
+  background-color: pink;
+  border-radius: 10%;
+}
+
+.pokemon-type-grass{
+  background-color: green;
+  border-radius: 10%;
+}
+
+.pokemon-card-grass{
+  background-color: green;
+  border-radius: 10%;
+}
+
+.pokemon-card-poison{
+  background-color: purple;
+  border-radius: 10%;
+}
+
+.pokemon-card-fire{
+  background-color: red;
+  border-radius: 10%;
+}
+
+.pokemon-card-flying{
+  background-color: skyblue;
+  border-radius: 10%;
+}
+
+.pokemon-card-water{
+  background-color: blue;
+  border-radius: 10%;
+}
+
+.pokemon-card-bug{
+  background-color: olive;
+  border-radius: 10%;
+}
+
+.pokemon-card-normal{
+  background-color: gray;
+  border-radius: 10%;
+}
+
+.pokemon-card-electric{
+  background-color: gold;
+  border-radius: 10%;
+}
+
+.pokemon-card-ground{
+  background-color: peru;
+  border-radius: 10%;
+}
+
+.pokemon-card-fairy{
+  background-color: pink;
+  border-radius: 10%;
+}
+
 /* FOOTER */
 footer {
   width: 100%;
