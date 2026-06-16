@@ -42,7 +42,7 @@ header {
 
 #pokemon-cards-container{
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -62,7 +62,7 @@ header {
   width: clamp(260px, 28dvw, 350px);
   min-height: clamp(220px, 22dvw, 270px);
   border-radius: 16px;
-  padding: 14px;
+  padding: 18px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 
   display: flex;
@@ -86,7 +86,7 @@ header {
 }
 
 .pokemon-card h2 {
-  margin: 0;
+
   font-size: clamp(26px, 4.5dvw, 32px);
   font-weight: 700;
   color: white;
@@ -149,6 +149,102 @@ header {
   object-fit: contain;
   display: block;
 }
+
+/* DIALOG */
+
+dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    border-radius: 24px;
+}
+
+dialog::backdrop {
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.pokemon-dialog {
+    background: white;
+    color: #000000;
+    border-radius: 24px;
+    padding: 24px 20px;
+    text-align: center;
+}
+
+.pokemon-dialog-header h2 {
+    font-size: 28px;
+}
+
+.pokemon-dialog-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokemon-dialog-image img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+.pokemon-dialog-types {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.pokemon-dialog-infos {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    color: #000000;
+    font-size: 15px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #d1cccc;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #d1cccc;
+    cursor: pointer;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow-btn.left {
+    left: 8px;
+}
+
+.arrow-btn.right {
+  right: 8px;
+}
+
+body:has(dialog[open]) {
+    overflow: hidden;
+}
+
 /* FOOTER */
 footer {
   width: 100%;
