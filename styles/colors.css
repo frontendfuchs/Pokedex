@@ -1,0 +1,51 @@
+/* Pokemon-Cards & Types*/
+
+.pokemon-type-grass,
+.pokemon-card-grass {
+  background-color: #b7e4c7;
+}
+
+.pokemon-type-poison,
+.pokemon-card-poison {
+  background-color: #d0bdf4;
+}
+
+.pokemon-type-fire,
+.pokemon-card-fire {
+  background-color: #ffb4a2;
+}
+
+.pokemon-type-flying,
+.pokemon-card-flying {
+  background-color: #bde0fe;
+}
+
+.pokemon-type-water,
+.pokemon-card-water {
+  background-color: #a9def9;
+}
+
+.pokemon-type-bug,
+.pokemon-card-bug {
+  background-color: #d9ed92;
+}
+
+.pokemon-type-normal,
+.pokemon-card-normal {
+  background-color: #dee2e6;
+}
+
+.pokemon-type-electric,
+.pokemon-card-electric {
+  background-color: #fff1a6;
+}
+
+.pokemon-type-ground,
+.pokemon-card-ground {
+  background-color: #e9c89b;
+}
+
+.pokemon-type-fairy,
+.pokemon-card-fairy {
+  background-color: #fbcfe8;
+}
