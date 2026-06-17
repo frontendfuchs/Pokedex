@@ -151,5 +151,14 @@ function openTab(tabId, clickedButton) {
     clickedButton.classList.add("active");
 }
 
+const dialog = document.getElementById("dialog");
+
+dialog.addEventListener("click", (event) => {
+  if (event.target === dialog) {
+    dialog.close();
+  }
+});
+
+
 getData();
 
