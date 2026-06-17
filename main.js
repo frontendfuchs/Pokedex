@@ -94,6 +94,62 @@ function showNextPokemon() {
     dialogRef.innerHTML = getPokemonDialogTemplate(allPokemon[currentPokemonIndex]);
 }
 
+function getAboutTemplate(pokemonData) {
+    return `
+        <div class="about-content">
+            <p class="about-row"><span class="about-label">Name:</span> <span class="about-value">${pokemonData.name}</span></p>
+            <p class="about-row"><span class="about-label">Height:</span> <span class="about-value">${pokemonData.height * 10} cm</span></p>
+            <p class="about-row"><span class="about-label">Weight:</span> <span class="about-value">${pokemonData.weight / 10} kg</span></p>
+        </div>
+    `;
+}
+
+function getStatsTemplate(stats) {
+    let html = '<div class="stats-content">';
+
+    for (let i = 0; i < stats.length; i++) {
+        html += `
+            <div class="stats-row">
+                <span class="stats-label">${stats[i].stat.name}:</span>
+                <span class="stats-value">${stats[i].base_stat}</span>
+            </div>
+        `;
+    }
+
+    html += '</div>';
+    return html;
+}
+
+function getAbilitiesTemplate(abilities) {
+    let html = '<div class="abilities-content">';
+
+    for (let i = 0; i < abilities.length; i++) {
+        html += `
+            <div class="abilities-row">
+                <span class="abilities-value">${abilities[i].ability.name}</span>
+            </div>
+        `;
+    }
+
+    html += '</div>';
+    return html;
+}
+
+function openTab(tabId, clickedButton) {
+    const allTabContents = document.querySelectorAll(".tab-content");
+    const allTabButtons = document.querySelectorAll(".tab-btn");
+
+    for (let i = 0; i < allTabContents.length; i++) {
+        allTabContents[i].classList.remove("active");
+    }
+
+    for (let i = 0; i < allTabButtons.length; i++) {
+        allTabButtons[i].classList.remove("active");
+    }
+
+    document.getElementById(tabId).classList.add("active");
+    clickedButton.classList.add("active");
+}
 
 getData();
 

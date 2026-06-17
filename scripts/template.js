@@ -27,7 +27,6 @@ function getPokemonTypesTemplate(pokemonType) {
 function getPokemonDialogTemplate(pokemonData) {
     return `
         <div class="pokemon-dialog ${pokemonData.types[0].type.name}">
-            <button class="close-btn" onclick="closePokemonDialog()">X</button>
             <button class="arrow-btn left" onclick="showPreviousPokemon()">&#10094;</button>
             <button class="arrow-btn right" onclick="showNextPokemon()">&#10095;</button>
             <div class="pokemon-dialog-header">
@@ -40,10 +39,31 @@ function getPokemonDialogTemplate(pokemonData) {
             <div class="pokemon-dialog-types">
                 ${getDialogTypesTemplate(pokemonData.types)}
             </div>
-            <div class="pokemon-dialog-infos">
-                <p>Height: ${pokemonData.height}</p>
-                <p>Weight: ${pokemonData.weight}</p>
+            <div class="dialog-bottom">
+                ${getDialogTabsTemplate(pokemonData)}
             </div>
+        </div>
+    `;
+}
+
+function getDialogTabsTemplate(pokemonData) {
+    return `
+        <div class="dialog-tabs">
+            <button class="tab-btn active" onclick="openTab('about', this)">About</button>
+            <button class="tab-btn" onclick="openTab('stats', this)">Stats</button>
+            <button class="tab-btn" onclick="openTab('abilities', this)">Abilities</button>
+        </div>
+
+        <div id="about" class="tab-content active">
+            ${getAboutTemplate(pokemonData)}
+        </div>
+
+        <div id="stats" class="tab-content">
+            ${getStatsTemplate(pokemonData.stats)}
+        </div>
+
+        <div id="abilities" class="tab-content">
+            ${getAbilitiesTemplate(pokemonData.abilities)}
         </div>
     `;
 }

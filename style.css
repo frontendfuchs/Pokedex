@@ -27,26 +27,22 @@ header {
         border-radius: 999px;
         background-color: #f8f8f8;
         color: black;
-        font-size: 18px; 
+        font-size: 18px;
         text-align: center;
-
-        
       }
     }
   }
 }
 
-
 /* MAIN */
 
-
-#pokemon-cards-container{
+#pokemon-cards-container {
   width: 100%;
   max-width: 1400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap:20px
+  gap: 20px;
 }
 
 .pokemon-card-grass,
@@ -71,7 +67,9 @@ header {
 }
 
 [class^="pokemon-card-"] {
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 [class^="pokemon-card-"]:hover {
@@ -86,7 +84,6 @@ header {
 }
 
 .pokemon-card h2 {
-
   font-size: clamp(26px, 4.5dvw, 32px);
   font-weight: 700;
   color: white;
@@ -117,13 +114,11 @@ header {
 .pokemon-type-electric,
 .pokemon-type-ground,
 .pokemon-type-fairy {
-  
   width: fit-content;
   padding: 6px 10px;
   margin: 8px;
   border-radius: 10px;
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.742);
-
 }
 
 .pokemon-type-grass p,
@@ -137,7 +132,7 @@ header {
 .pokemon-type-ground p,
 .pokemon-type-fairy p {
   margin: 0;
-  font-size: clamp(22px, 4.5dvw, 32px);
+  font-size: clamp(18px, 4.5dvw, 24px);
   color: white;
   text-transform: capitalize;
 }
@@ -150,100 +145,6 @@ header {
   display: block;
 }
 
-/* DIALOG */
-
-dialog {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    border-radius: 24px;
-}
-
-dialog::backdrop {
-    background: rgba(0, 0, 0, 0.45);
-}
-
-.pokemon-dialog {
-    background: white;
-    color: #000000;
-    border-radius: 24px;
-    padding: 24px 20px;
-    text-align: center;
-}
-
-.pokemon-dialog-header h2 {
-    font-size: 28px;
-}
-
-.pokemon-dialog-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.pokemon-dialog-image img {
-    width: 180px;
-    height: 180px;
-    object-fit: contain;
-}
-
-.pokemon-dialog-types {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.pokemon-dialog-infos {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    flex-wrap: wrap;
-    color: #000000;
-    font-size: 15px;
-}
-
-.close-btn {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    width: 36px;
-    height: 36px;
-    border: none;
-    border-radius: 50%;
-    background: #d1cccc;
-    cursor: pointer;
-    font-size: 18px;
-}
-
-.arrow-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 42px;
-    height: 42px;
-    border: none;
-    border-radius: 50%;
-    background: #d1cccc;
-    cursor: pointer;
-    font-size: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.arrow-btn.left {
-    left: 8px;
-}
-
-.arrow-btn.right {
-  right: 8px;
-}
-
-body:has(dialog[open]) {
-    overflow: hidden;
-}
 
 /* FOOTER */
 footer {
