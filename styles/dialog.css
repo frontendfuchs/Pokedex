@@ -1,0 +1,189 @@
+/* DIALOG */
+
+dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(280px, 90vw, 400px);
+  max-width: calc(100dvw - 24px);
+  border-radius: 24px;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.pokemon-dialog {
+  width: 100%;
+  height: 700px;
+  color: #ffffff;
+  border-radius: 24px;
+  padding: 24px 20px;
+  text-align: center;
+  /* overflow: hidden; */
+}
+
+.pokemon-dialog-header h2 {
+  margin-top: 30px;
+  font-size: 32px;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.pokemon-dialog-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 230px;
+  padding-top: 10px;
+}
+
+.pokemon-dialog-image img {
+  position: absolute;
+  top: 30%;
+  z-index: 2;
+  width: 180px;
+  height: 180px;
+  object-fit: contain;
+}
+
+.pokemon-dialog-types {
+  position: absolute;
+  top: 18%;
+  display: flex;
+  flex-direction: row;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 5%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: #d1cccc7b;
+  cursor: pointer;
+  font-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrow-btn.left {
+  left: 8px;
+}
+
+.arrow-btn.right {
+  right: 8px;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+.dialog-bottom {
+  background: rgb(232, 225, 225);
+  display: flex;
+  flex-direction: column;
+  height: 55%;
+  border-radius: 28px 28px 0 0;
+  padding: 20px;
+  
+}
+
+/* TAB */
+.dialog-tabs {
+    color: #888;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.tab-btn {
+
+  padding: 8px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  
+  font-weight: bold;
+  color: #666;
+  text-decoration: underline;
+  
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.about-content {
+    margin-top: 10px;
+}
+
+.about-row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 12px;
+    font-size: 18px;
+}
+
+.about-label {
+    width: 100px;
+    font-weight: 700;
+    color: #666;
+}
+
+.about-value {
+    color: #555;
+}
+
+.stats-content {
+    margin-top: 10px;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.stats-label {
+    font-weight: 700;
+    color: #666;
+    text-transform: capitalize;
+}
+
+.stats-value {
+    font-weight: 600;
+    color: #444;
+}
+
+.abilities-content {
+    margin-top: 10px;
+}
+
+.abilities-row {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background-color: #e8e1e1;
+    border-radius: 12px;
+}
+
+.abilities-value {
+    font-size: 17px;
+    font-weight: 600;
+    color: #555;
+    text-transform: capitalize;
+}
+

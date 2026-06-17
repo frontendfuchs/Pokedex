@@ -27,26 +27,22 @@ header {
         border-radius: 999px;
         background-color: #f8f8f8;
         color: black;
-        font-size: 18px; 
+        font-size: 18px;
         text-align: center;
-
-        
       }
     }
   }
 }
 
-
 /* MAIN */
 
-
-#pokemon-cards-container{
+#pokemon-cards-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap:20px
+  gap: 20px;
 }
 
 .pokemon-card-grass,
@@ -62,7 +58,7 @@ header {
   width: clamp(260px, 28dvw, 350px);
   min-height: clamp(220px, 22dvw, 270px);
   border-radius: 16px;
-  padding: 14px;
+  padding: 18px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 
   display: flex;
@@ -71,7 +67,9 @@ header {
 }
 
 [class^="pokemon-card-"] {
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 [class^="pokemon-card-"]:hover {
@@ -86,7 +84,6 @@ header {
 }
 
 .pokemon-card h2 {
-  margin: 0;
   font-size: clamp(26px, 4.5dvw, 32px);
   font-weight: 700;
   color: white;
@@ -117,13 +114,11 @@ header {
 .pokemon-type-electric,
 .pokemon-type-ground,
 .pokemon-type-fairy {
-  
   width: fit-content;
   padding: 6px 10px;
   margin: 8px;
   border-radius: 10px;
   box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.742);
-
 }
 
 .pokemon-type-grass p,
@@ -137,7 +132,7 @@ header {
 .pokemon-type-ground p,
 .pokemon-type-fairy p {
   margin: 0;
-  font-size: clamp(22px, 4.5dvw, 32px);
+  font-size: clamp(18px, 4.5dvw, 24px);
   color: white;
   text-transform: capitalize;
 }
@@ -149,6 +144,8 @@ header {
   object-fit: contain;
   display: block;
 }
+
+
 /* FOOTER */
 footer {
   width: 100%;

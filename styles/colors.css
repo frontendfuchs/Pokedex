@@ -1,51 +1,61 @@
 /* Pokemon-Cards & Types*/
 
 .pokemon-type-grass,
-.pokemon-card-grass {
-  background-color: #b7e4c7;
+.pokemon-card-grass, 
+.pokemon-dialog.grass {
+  background-color: #0bca97;
 }
 
 .pokemon-type-poison,
-.pokemon-card-poison {
-  background-color: #d0bdf4;
+.pokemon-card-poison,
+.pokemon-dialog.poison {
+  background-color: #8d64d9;
 }
 
 .pokemon-type-fire,
-.pokemon-card-fire {
-  background-color: #ffb4a2;
+.pokemon-card-fire,
+.pokemon-dialog.fire {
+  background-color: #dc0404;
 }
 
 .pokemon-type-flying,
-.pokemon-card-flying {
-  background-color: #bde0fe;
+.pokemon-card-flying,
+.pokemon-dialog.flying {
+  background-color: #3b97e7;
 }
 
 .pokemon-type-water,
-.pokemon-card-water {
-  background-color: #a9def9;
+.pokemon-card-water,
+.pokemon-dialog.water {
+  background-color: #000268;
 }
 
 .pokemon-type-bug,
-.pokemon-card-bug {
-  background-color: #d9ed92;
+.pokemon-card-bug,
+.pokemon-dialog.bug {
+  background-color: #c4a705;
 }
 
 .pokemon-type-normal,
-.pokemon-card-normal {
-  background-color: #dee2e6;
+.pokemon-card-normal,
+.pokemon-dialog.normal {
+  background-color: #82dac8;
 }
 
 .pokemon-type-electric,
-.pokemon-card-electric {
-  background-color: #fff1a6;
+.pokemon-card-electric,
+.pokemon-dialog.electric {
+  background-color: #ffee00;
 }
 
 .pokemon-type-ground,
-.pokemon-card-ground {
-  background-color: #e9c89b;
+.pokemon-card-ground,
+.pokemon-dialog.ground {
+  background-color: #ff9705;
 }
 
 .pokemon-type-fairy,
-.pokemon-card-fairy {
-  background-color: #fbcfe8;
+.pokemon-card-fairy,
+.pokemon-dialog.fairy {
+  background-color: #eb9ac8;
 }
