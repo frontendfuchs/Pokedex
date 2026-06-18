@@ -59,3 +59,51 @@
 .pokemon-dialog.fairy {
   background-color: #eb9ac8;
 }
+
+.pokemon-type-fighting,
+.pokemon-card-fighting,
+.pokemon-dialog.fighting {
+  background-color: #8b2f1c;
+}
+
+.pokemon-type-psychic,
+.pokemon-card-psychic,
+.pokemon-dialog.psychic {
+  background-color: #ff4f87;
+}
+
+.pokemon-type-rock,
+.pokemon-card-rock,
+.pokemon-dialog.rock {
+  background-color: #8c6b3b;
+}
+
+.pokemon-type-ghost,
+.pokemon-card-ghost,
+.pokemon-dialog.ghost {
+  background-color: #5b4a8b;
+}
+
+.pokemon-type-ice,
+.pokemon-card-ice,
+.pokemon-dialog.ice {
+  background-color: #7fe7ff;
+}
+
+.pokemon-type-dragon,
+.pokemon-card-dragon,
+.pokemon-dialog.dragon {
+  background-color: #4c3cff;
+}
+
+.pokemon-type-dark,
+.pokemon-card-dark,
+.pokemon-dialog.dark {
+  background-color: #3b2f2f;
+}
+
+.pokemon-type-steel,
+.pokemon-card-steel,
+.pokemon-dialog.steel {
+  background-color: #8fa3ad;
+}
