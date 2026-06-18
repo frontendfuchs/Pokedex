@@ -1,50 +1,53 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pokedex</title>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="./assets/images/pokeball-icon.svg"
-    />
-    <link rel="stylesheet" href="style.css"/>
-    <link rel="stylesheet" href="./styles/standard.css"/>
-    <link rel="stylesheet" href="./styles/colors.css"/>
-    <link rel="stylesheet" href="./styles/dialog.css"/>
+    <link rel="icon" type="image/x-icon" href="./assets/images/pokeball-icon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./styles/standard.css" />
+    <link rel="stylesheet" href="./styles/colors.css" />
+    <link rel="stylesheet" href="./styles/dialog.css" />
 
     <script src="/scripts/template.js" defer></script>
     <script src="main.js" defer></script>
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
-      <div class="content">
-        <div class="header-content">
-          <div class="header-logo">
-            <img src="./assets/images/pokedex-logo.png" alt="Pokedex Logo" />
-          </div>
-          <div class="searchbar">
-            <input type="text" name="search" placeholder="Search..">
-          </div>
+        <div class="content">
+            <div class="header-content">
+                <div class="header-logo">
+                    <img src="./assets/images/pokedex-logo.png" alt="Pokedex Logo" />
+                </div>
+                <div class="searchbar">
+                    <input id="pokemon-search" type="text" name="search" placeholder="Search.."
+                        oninput="searchInput()">
+                    <button id="search-button" onclick="searchPokemon()">Go</button>
+                </div>
+                
+            </div>
         </div>
-      </div>
     </header>
+    <p id="search-message"></p>
     <main>
         <section>
             <div class="content">
                 <div id="pokemon-cards-container">
-            </div>
+                </div>
         </section>
         <dialog id="dialog"></dialog>
         <div class="load-btn-wrapper">
-        <button onclick="loadMorePokemon()">
-            <span class="load-btn" >Catch Pokémon</span>
-        </button>
+            <button onclick="loadMorePokemon()">
+                <span class="load-btn">Catch Pokémon</span>
+            </button>
         </div>
     </main>
     <footer>
         <img src="./assets/images/pokedex-footer1.png" alt="pokedex logo">
     </footer>
-  </body>
+</body>
+
 </html>

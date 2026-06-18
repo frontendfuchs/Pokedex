@@ -2,6 +2,7 @@ let allPokemon = [];
 let currentPokemonIndex = 0;
 let offset = 0;
 const limit = 20;
+let filteredPokemon = [];
 
 async function getData() {
   const response = await fetch(
@@ -112,16 +113,6 @@ function showNextPokemon() {
   );
 }
 
-function getAboutTemplate(pokemonData) {
-  return `
-        <div class="about-content">
-            <p class="about-row"><span class="about-label">Name:</span> <span class="about-value">${pokemonData.name}</span></p>
-            <p class="about-row"><span class="about-label">Height:</span> <span class="about-value">${pokemonData.height * 10} cm</span></p>
-            <p class="about-row"><span class="about-label">Weight:</span> <span class="about-value">${pokemonData.weight / 10} kg</span></p>
-        </div>
-    `;
-}
-
 function getStatsTemplate(stats) {
   let html = '<div class="stats-content">';
 
@@ -177,4 +168,62 @@ dialog.addEventListener("click", (event) => {
   }
 });
 
+function searchInput() {
+  let value = document.getElementById("pokemon-search").value.trim();
+
+  if (value.length >= 3) {
+    document.getElementById("search-button").disabled = false;
+    document.getElementById("search-message").textContent = "";
+  } else {
+    document.getElementById("search-button").disabled = true;
+
+    if (value.length === 0) {
+      document.getElementById("search-message").textContent = "";
+      filteredPokemon = allPokemon;
+      renderFilteredPokemon();
+    } else {
+      document.getElementById("search-message").textContent =
+        "Bitte mindestens 3 Buchstaben eingeben.";
+    }
+  }
+}
+
+function searchPokemon() {
+  let value = document.getElementById("pokemon-search").value.toLowerCase().trim();
+
+  filteredPokemon = allPokemon.filter(function (pokemon) {
+    return pokemon.name.toLowerCase().includes(value);
+  });
+
+  if (filteredPokemon.length === 0) {
+    document.getElementById("search-message").textContent =
+      "Kein passendes Pokémon gefunden.";
+  } else {
+    document.getElementById("search-message").textContent = "";
+  }
+
+  renderFilteredPokemon();
+}
+
+function renderFilteredPokemon() {
+  let container = document.getElementById("pokemon-cards-container");
+  container.innerHTML = "";
+
+  for (let index = 0; index < filteredPokemon.length; index++) {
+    let pokemonData = filteredPokemon[index];
+    let pokemonTypes = getPokemonTypes(pokemonData);
+    let originalIndex = allPokemon.indexOf(pokemonData);
+
+    container.innerHTML += getPokemonCardTemplate(
+      pokemonData,
+      originalIndex,
+      pokemonTypes[0]
+    );
+
+    renderPokemonTypes(pokemonTypes, originalIndex);
+  }
+}
+
 getData();
+filteredPokemon = allPokemon;
+renderFilteredPokemon();
