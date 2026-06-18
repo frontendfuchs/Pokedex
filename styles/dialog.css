@@ -42,10 +42,11 @@ dialog::backdrop {
 .pokemon-dialog-image img {
   position: absolute;
   top: 30%;
-  z-index: 2;
   width: 180px;
   height: 180px;
   object-fit: contain;
+  z-index: 3;
+  
 }
 
 .pokemon-dialog-types {

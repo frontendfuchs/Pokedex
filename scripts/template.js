@@ -1,7 +1,7 @@
 
 function getPokemonCardTemplate(pokemonData,index,pokemonType) {
     return `
-        <div class="pokemon-card-${pokemonType}" onclick="openPokemonDialog(${index})">
+        <div class="poke-card pokemon-card-${pokemonType}" onclick="openPokemonDialog(${index})">
         <div class="pokemon-card">
             <h2>${pokemonData.name}</h2>
             <p>#${pokemonData.id}</p>
@@ -18,7 +18,7 @@ function getPokemonCardTemplate(pokemonData,index,pokemonType) {
 
 function getPokemonTypesTemplate(pokemonType) {
     return `
-    <div class="pokemon-type-${pokemonType}">
+    <div class="poke-type pokemon-type-${pokemonType}">
     <p>${pokemonType}</p>
     </div>
     `; 
@@ -35,6 +35,7 @@ function getPokemonDialogTemplate(pokemonData) {
             </div>
             <div class="pokemon-dialog-image">
                 <img src="${pokemonData.sprites.other['dream_world'].front_default}" alt="${pokemonData.name}">
+                
             </div>
             <div class="pokemon-dialog-types">
                 ${getDialogTypesTemplate(pokemonData.types)}
