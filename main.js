@@ -9,7 +9,13 @@ let filteredPokemon = []; // filteredPokemon is a second array for search result
 // the first api endpoint only gives a short list with name + url
 // we pass responseFromJson.results to renderPokemonCards()
 // and inside that function we fetch every single pokemon again by its own url
+// we show the loading overlay before the fetch starts
+// and hide it again in finally, so it also disappears
 async function getData() {
+  showLoadingSpinner();
+
+   try{ 
+
   const response = await fetch(
     `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`,
   );
@@ -17,7 +23,9 @@ async function getData() {
 
   await renderPokemonCards(responseFromJson.results);
 
-  filteredPokemon = allPokemon;
+  filteredPokemon = allPokemon;} finally {disableLoadingSpinner();
+
+  }
 }
 
 
@@ -203,7 +211,6 @@ function openTab(tabId, clickedButton) {
   clickedButton.classList.add("active");
 }
 
-
 /* DIALOG EVENT */
 const dialog = document.getElementById("dialog");
 
@@ -286,4 +293,15 @@ function renderFilteredPokemon() {
   }
 }
 
+// shows the loading overlay before the fetch starts
+// the overlay is hidden by default with the css class "d-none"
+// removing that class makes it visible
+function showLoadingSpinner() {
+  document.getElementById("loading-overlay").classList.remove("d-none");
+}
 
+// hides the loading overlay after loading is finished
+// adding the css class "d-none" hides the overlay again
+function disableLoadingSpinner() {
+  document.getElementById("loading-overlay").classList.add("d-none");
+}
