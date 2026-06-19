@@ -68,3 +68,13 @@ function getDialogTabsTemplate(pokemonData) {
         </div>
     `;
 }
+
+function getAboutTemplate(pokemonData) {
+  return `
+        <div class="about-content">
+            <p class="about-row"><span class="about-label">Name:</span> <span class="about-value">${pokemonData.name}</span></p>
+            <p class="about-row"><span class="about-label">Height:</span> <span class="about-value">${pokemonData.height * 10} cm</span></p>
+            <p class="about-row"><span class="about-label">Weight:</span> <span class="about-value">${pokemonData.weight / 10} kg</span></p>
+        </div>
+    `;
+}

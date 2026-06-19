@@ -19,3 +19,20 @@ border: initial;
   margin: 0 auto;
   padding:22px;
 }
+
+@media screen and (max-width: 600px) {
+  .content{
+    padding: 0px;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
