@@ -106,6 +106,28 @@ header {
 
 /* #region MAIN */
 
+/* #region loading-spinner */
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.60);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loading-overlay img {
+  width: clamp(250px, 16dvw, 350px);
+  height: auto;
+  object-fit: contain;
+}
+
+.d-none {
+  display: none;
+}
+/* #endregion loading-spinner*/
+
 /* #region Pokemon Container */
 #pokemon-cards-container {
   width: 100%;
