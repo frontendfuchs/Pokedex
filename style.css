@@ -151,6 +151,7 @@ header {
   border-radius: 16px;
   padding: 18px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
 
   display: flex;
   flex-direction: column;
@@ -258,6 +259,10 @@ header {
 .load-btn:hover {
   background-color: #000000;
   color: #ffcc03;
+}
+
+body:has(#loading-overlay:not(.d-none)) {
+  overflow: hidden;
 }
 /* #endregion Load Button */
 
