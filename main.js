@@ -90,11 +90,11 @@ function renderPokemonTypes(pokemonTypes, index) {
 // we need to know which pokemon is currently active
 // after that we render the full dialog for exactly this pokemon
 function openPokemonDialog(index) {
-  currentPokemonIndex = index;
+  currentPokemonIndex = filteredPokemon.indexOf(allPokemon[index]);
 
   const dialogRef = document.getElementById("dialog");
   dialogRef.innerHTML = getPokemonDialogTemplate(
-    allPokemon[currentPokemonIndex],
+    filteredPokemon[currentPokemonIndex],
   );
   dialogRef.showModal();
 }
@@ -126,14 +126,14 @@ function getDialogTypesTemplate(types) {
 // after changing currentPokemonIndex we re-render the dialog content
 function showPreviousPokemon() {
   if (currentPokemonIndex === 0) {
-    currentPokemonIndex = allPokemon.length - 1;
+    currentPokemonIndex = filteredPokemon.length - 1;
   } else {
     currentPokemonIndex--;
   }
 
   const dialogRef = document.getElementById("dialog");
   dialogRef.innerHTML = getPokemonDialogTemplate(
-    allPokemon[currentPokemonIndex],
+    filteredPokemon[currentPokemonIndex],
   );
 }
 
@@ -142,7 +142,7 @@ function showPreviousPokemon() {
 // this only works with pokemon that are already inside allPokemon
 // not with pokemon that are not loaded yet from the api
 function showNextPokemon() {
-  if (currentPokemonIndex === allPokemon.length - 1) {
+  if (currentPokemonIndex === filteredPokemon.length - 1) {
     currentPokemonIndex = 0;
   } else {
     currentPokemonIndex++;
@@ -150,7 +150,7 @@ function showNextPokemon() {
 
   const dialogRef = document.getElementById("dialog");
   dialogRef.innerHTML = getPokemonDialogTemplate(
-    allPokemon[currentPokemonIndex],
+    filteredPokemon[currentPokemonIndex],
   );
 }
 

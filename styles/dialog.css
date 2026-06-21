@@ -94,6 +94,8 @@ body:has(dialog[open]) {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    z-index: 5;
 }
 
 .arrow-btn.left {
@@ -104,11 +106,11 @@ body:has(dialog[open]) {
     right: 8px;
 }
 
-@media (min-width: 1280px) {
+/* @media (min-width: 1280px) {
     .arrow-btn {
-        top: 10%;
+        top: 5%;
     }
-}
+} */
 /* #endregion Arrow Buttons */
 
 /* #region Close Dialog */
@@ -127,13 +129,15 @@ body:has(dialog[open]) {
     display: flex;
     justify-content: center;
     align-items: center;
+
+    z-index: 5;
 }
 
-@media (min-width: 1280px) {
+/* @media (min-width: 1280px) {
     .close-btn {
         display: none;
     }
-}
+} */
 /* #endregion Close Dialog */
 
 
