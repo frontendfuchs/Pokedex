@@ -16,6 +16,7 @@ function getPokemonCardTemplate(pokemonData,index,pokemonType) {
     `;
 }
 
+
 function getPokemonTypesTemplate(pokemonType) {
     return `
     <div class="poke-type pokemon-type-${pokemonType}">
@@ -23,6 +24,7 @@ function getPokemonTypesTemplate(pokemonType) {
     </div>
     `; 
 }
+
 
 function getPokemonDialogTemplate(pokemonData) {
     return `
@@ -48,6 +50,7 @@ function getPokemonDialogTemplate(pokemonData) {
     `;
 }
 
+
 function getDialogTabsTemplate(pokemonData) {
     return `
         <div class="dialog-tabs">
@@ -69,6 +72,7 @@ function getDialogTabsTemplate(pokemonData) {
         </div>
     `;
 }
+
 
 function getAboutTemplate(pokemonData) {
   return `
