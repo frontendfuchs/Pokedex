@@ -1,9 +1,9 @@
 let allPokemon = [];  // every pokemon is fetched gets pushed into allPokemon,contains the full pokemon data objects that we later need for cards, dialog, stats and abilities
-
 let currentPokemonIndex = 0;  //stores which pokemon is currently shown inside the dialog
 let offset = 0; // offset and limit are used for pagination, so loadMorePokemon()
 const limit = 20;
 let filteredPokemon = []; // filteredPokemon is a second array for search results
+const dialog = document.getElementById("dialog");
 
 
 // the first api endpoint only gives a short list with name + url
@@ -13,18 +13,13 @@ let filteredPokemon = []; // filteredPokemon is a second array for search result
 // and hide it again in finally, so it also disappears
 async function getData() {
   showLoadingSpinner();
-
    try{ 
-
   const response = await fetch(
     `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`,
   );
   const responseFromJson = await response.json();
-
   await renderPokemonCards(responseFromJson.results);
-
   filteredPokemon = allPokemon;} finally {disableLoadingSpinner();
-
   }
 }
 
@@ -35,13 +30,10 @@ async function getData() {
 // we use currentIndex for ids and for opening the correct dialog later
 async function renderPokemonCards(pokemonList) {
   const containerRef = document.getElementById("pokemon-cards-container");
-
   for (let index = 0; index < pokemonList.length; index++) {
     const pokemonResponse = await fetch(pokemonList[index].url);
     const pokemonData = await pokemonResponse.json();
-
     allPokemon.push(pokemonData);
-
     const currentIndex = allPokemon.length - 1;
     const pokemonTypes = getPokemonTypes(pokemonData);
 
@@ -54,12 +46,14 @@ async function renderPokemonCards(pokemonList) {
   }
 }
 
+
 // this function loads the next pokemons
 // offset gets increased by limit, so the next api request skips the already loaded pokemon
 function loadMorePokemon() {
     offset += limit;
     getData();
 }
+
 
 // this function extracts the type names from one pokemon object
 // pokemonData is one single pokemon object with many properties
@@ -84,6 +78,7 @@ function renderPokemonTypes(pokemonTypes, index) {
   }
 }
 
+
 // this function opens the dialog for the clicked pokemon card
 // index is the index from allPokemon, we store that index globally in currentPokemonIndex
 // important for the next and previous buttons in the dialog
@@ -105,9 +100,9 @@ function closePokemonDialog() {
   document.getElementById("dialog").close();
 }
 
+
 // this function builds the html string for the pokemon types inside the dialog
 // html starts as an empty string and gets filled step by step in the loop
-
 function getDialogTypesTemplate(types) {
   let html = "";
 
@@ -120,6 +115,7 @@ function getDialogTypesTemplate(types) {
   }
   return html;
 }
+
 
 // this function switches the dialog to the previous pokemon
 // if we are currently at the first pokemon, we jump to the last one
@@ -136,6 +132,7 @@ function showPreviousPokemon() {
     filteredPokemon[currentPokemonIndex],
   );
 }
+
 
 // this function switches the dialog to the next pokemon
 // if we are at the last pokemon, we jump back to the first one
@@ -169,10 +166,10 @@ function getStatsTemplate(stats) {
             </div>
         `;
   }
-
   html += "</div>";
   return html;
 }
+
 
 // this function creates the abilities tab html for one pokemon
 // abilities is also the  api array and each ability name is nested inside .ability.name
@@ -186,7 +183,6 @@ function getAbilitiesTemplate(abilities) {
             </div>
         `;
   }
-
   html += "</div>";
   return html;
 }
@@ -203,7 +199,6 @@ function openTab(tabId, clickedButton) {
   for (let i = 0; i < allTabContents.length; i++) {
     allTabContents[i].classList.remove("active");
   }
-
   for (let i = 0; i < allTabButtons.length; i++) {
     allTabButtons[i].classList.remove("active");
   }
@@ -213,8 +208,6 @@ function openTab(tabId, clickedButton) {
 }
 
 /* DIALOG EVENT */
-const dialog = document.getElementById("dialog");
-
 dialog.addEventListener("click", (event) => {
   if (event.target === dialog) {
     dialog.close();
@@ -247,6 +240,7 @@ function searchInput() {
   }
 }
 
+
 // this function is the actual search after clicking the search button
 // we convert the input to lower case so the search becomes case-insensitive
 // .filter() goes through the full allPokemon array and checks every loaded pokemon
@@ -269,6 +263,7 @@ function searchPokemon() {
   renderFilteredPokemon();
 }
 
+
 // this function renders only the pokemon that are currently inside filteredPokemon
 // first we clear the whole card container so the old cards disappear
 // then we loop through filteredPokemon and build the cards again
@@ -289,10 +284,10 @@ function renderFilteredPokemon() {
       originalIndex,
       pokemonTypes[0]
     );
-
     renderPokemonTypes(pokemonTypes, originalIndex);
   }
 }
+
 
 // shows the loading overlay before the fetch starts
 // the overlay is hidden by default with the css class "d-none"
@@ -300,6 +295,7 @@ function renderFilteredPokemon() {
 function showLoadingSpinner() {
   document.getElementById("loading-overlay").classList.remove("d-none");
 }
+
 
 // hides the loading overlay after loading is finished
 // adding the css class "d-none" hides the overlay again
