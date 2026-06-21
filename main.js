@@ -154,6 +154,7 @@ function showNextPokemon() {
   );
 }
 
+
 // this function creates the stats tab html for one pokemon
 // stats is the stats array from the api
 // each entry contains a stat object and the base_stat value

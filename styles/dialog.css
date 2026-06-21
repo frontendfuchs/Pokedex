@@ -82,7 +82,7 @@ body:has(dialog[open]) {
 /* #region Arrow Buttons */
 .arrow-btn {
     position: absolute;
-    top: 5%;
+    top: 35%;
     transform: translateY(-50%);
     width: 42px;
     height: 42px;
@@ -103,7 +103,39 @@ body:has(dialog[open]) {
 .arrow-btn.right {
     right: 8px;
 }
+
+@media (min-width: 1280px) {
+    .arrow-btn {
+        top: 10%;
+    }
+}
 /* #endregion Arrow Buttons */
+
+/* #region Close Dialog */
+
+.close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #d1cccc7b;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 1280px) {
+    .close-btn {
+        display: none;
+    }
+}
+/* #endregion Close Dialog */
 
 
 /* #region Dialog Bottom */

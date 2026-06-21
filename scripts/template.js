@@ -27,6 +27,7 @@ function getPokemonTypesTemplate(pokemonType) {
 function getPokemonDialogTemplate(pokemonData) {
     return `
         <div class="pokemon-dialog ${pokemonData.types[0].type.name}">
+        <button class="close-btn" onclick="closePokemonDialog()">✕</button>
             <button class="arrow-btn left" onclick="showPreviousPokemon()">&#10094;</button>
             <button class="arrow-btn right" onclick="showNextPokemon()">&#10095;</button>
             <div class="pokemon-dialog-header">
