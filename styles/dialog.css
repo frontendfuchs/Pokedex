@@ -112,7 +112,6 @@ body:has(dialog[open]) {
 /* #endregion Arrow Buttons */
 
 /* #region Close Dialog */
-
 .close-btn {
     position: absolute;
     top: 16px;
