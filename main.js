@@ -13,13 +13,15 @@ const dialog = document.getElementById("dialog");
 // and hide it again in finally, so it also disappears
 async function getData() {
   showLoadingSpinner();
-   try{ 
-  const response = await fetch(
-    `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`,
-  );
-  const responseFromJson = await response.json();
-  await renderPokemonCards(responseFromJson.results);
-  filteredPokemon = allPokemon;} finally {disableLoadingSpinner();
+  try {
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${offset}`,
+    );
+    const responseFromJson = await response.json();
+    await renderPokemonCards(responseFromJson.results);
+    filteredPokemon = allPokemon;
+  } finally {
+    disableLoadingSpinner();
   }
 }
 
@@ -50,8 +52,8 @@ async function renderPokemonCards(pokemonList) {
 // this function loads the next pokemons
 // offset gets increased by limit, so the next api request skips the already loaded pokemon
 function loadMorePokemon() {
-    offset += limit;
-    getData();
+  offset += limit;
+  getData();
 }
 
 
@@ -232,6 +234,7 @@ function searchInput() {
     if (value.length === 0) {
       document.getElementById("search-message").textContent = "";
       filteredPokemon = allPokemon;
+      document.getElementById("load-more-button").hidden = false;
       renderFilteredPokemon();
     } else {
       document.getElementById("search-message").textContent =
@@ -260,6 +263,7 @@ function searchPokemon() {
     document.getElementById("search-message").textContent = "";
   }
 
+  document.getElementById("load-more-button").hidden = true;
   renderFilteredPokemon();
 }
 

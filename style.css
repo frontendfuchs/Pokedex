@@ -26,7 +26,7 @@ header {
 
 @media screen and (max-width: 600px) {
 
-.header-content {
+  .header-content {
 
     display: flex;
     flex-direction: column;
@@ -91,6 +91,7 @@ header {
   font-weight: bold;
   cursor: pointer;
 }
+
 /* #endregion Searchbar */
 
 
@@ -103,6 +104,7 @@ header {
   font-weight: bold;
   margin: 12px 0;
 }
+
 /* #endregion Search Message */
 
 /* #endregion HEADER */
@@ -129,6 +131,7 @@ header {
 .d-none {
   display: none;
 }
+
 /* #endregion loading-spinner*/
 
 /* #region Pokemon Container */
@@ -141,6 +144,7 @@ header {
   gap: 20px;
   margin-bottom: 40px;
 }
+
 /* #endregion Pokemon Container */
 
 
@@ -191,6 +195,7 @@ header {
   align-items: flex-end;
   gap: 10px;
 }
+
 /* #endregion Pokemon Card */
 
 
@@ -210,6 +215,7 @@ header {
   color: white;
   text-transform: capitalize;
 }
+
 /* #endregion Pokemon Type */
 
 
@@ -232,6 +238,7 @@ header {
   height: 60px;
   object-fit: contain;
 }
+
 /* #endregion Pokemon Images */
 
 
@@ -264,10 +271,10 @@ header {
 body:has(#loading-overlay:not(.d-none)) {
   overflow: hidden;
 }
+
 /* #endregion Load Button */
 
 /* #endregion MAIN */
-
 
 /* #region FOOTER */
 footer {
@@ -283,4 +290,5 @@ footer img {
   width: clamp(180px, 18dvw, 250px);
   height: auto;
 }
+
 /* #endregion FOOTER */

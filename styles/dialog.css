@@ -20,6 +20,7 @@ dialog::backdrop {
 body:has(dialog[open]) {
     overflow: hidden;
 }
+
 /* #endregion Dialog Base */
 
 
@@ -36,6 +37,7 @@ body:has(dialog[open]) {
     padding: 24px 20px;
     text-align: center;
 }
+
 /* #endregion Pokemon Dialog Container */
 
 
@@ -46,6 +48,7 @@ body:has(dialog[open]) {
     text-transform: capitalize;
     font-weight: 700;
 }
+
 /* #endregion Dialog Header */
 
 
@@ -66,6 +69,7 @@ body:has(dialog[open]) {
     object-fit: contain;
     z-index: 3;
 }
+
 /* #endregion Dialog Image */
 
 
@@ -76,6 +80,7 @@ body:has(dialog[open]) {
     display: flex;
     flex-direction: row;
 }
+
 /* #endregion Dialog Types */
 
 
@@ -151,6 +156,7 @@ body:has(dialog[open]) {
     padding: 20px;
     overflow: hidden;
 }
+
 /* #endregion Dialog Bottom */
 
 
@@ -175,6 +181,7 @@ body:has(dialog[open]) {
     color: #666;
     text-decoration: underline;
 }
+
 /* #endregion Tab Navigation */
 
 
@@ -188,6 +195,7 @@ body:has(dialog[open]) {
 .tab-content.active {
     display: block;
 }
+
 /* #endregion Tab Content */
 
 /* #endregion Tabs */
@@ -215,6 +223,7 @@ body:has(dialog[open]) {
 .about-value {
     color: #555;
 }
+
 /* #endregion About Tab */
 
 
@@ -241,6 +250,7 @@ body:has(dialog[open]) {
     font-weight: 600;
     color: #444;
 }
+
 /* #endregion Stats Tab */
 
 
@@ -262,6 +272,7 @@ body:has(dialog[open]) {
     color: #555;
     text-transform: capitalize;
 }
+
 /* #endregion Abilities Tab */
 
 /* #endregion DIALOG */

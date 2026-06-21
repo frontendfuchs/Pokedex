@@ -1,27 +1,27 @@
 * {
-margin: 0;
-padding: 0;
-scroll-behavior: smooth;
-box-sizing: border-box;
-text-decoration: none;
-position: relative;
-list-style: none;
-font-size: inherit;
-color: inherit;
-font-family: Sora;
-background: initial;
-border: initial;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  text-decoration: none;
+  position: relative;
+  list-style: none;
+  font-size: inherit;
+  color: inherit;
+  font-family: Sora;
+  background: initial;
+  border: initial;
 }
 
 .content {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding:22px;
+  padding: 22px;
 }
 
 @media screen and (max-width: 600px) {
-  .content{
+  .content {
     padding: 0px;
   }
 }

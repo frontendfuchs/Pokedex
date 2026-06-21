@@ -1,5 +1,5 @@
 
-function getPokemonCardTemplate(pokemonData,index,pokemonType) {
+function getPokemonCardTemplate(pokemonData, index, pokemonType) {
     return `
         <div class="poke-card pokemon-card-${pokemonType}" onclick="openPokemonDialog(${index})">
         <div class="pokemon-card">
@@ -22,7 +22,7 @@ function getPokemonTypesTemplate(pokemonType) {
     <div class="poke-type pokemon-type-${pokemonType}">
     <p>${pokemonType}</p>
     </div>
-    `; 
+    `;
 }
 
 
@@ -75,7 +75,7 @@ function getDialogTabsTemplate(pokemonData) {
 
 
 function getAboutTemplate(pokemonData) {
-  return `
+    return `
         <div class="about-content">
             <p class="about-row"><span class="about-label">Name:</span> <span class="about-value">${pokemonData.name}</span></p>
             <p class="about-row"><span class="about-label">Height:</span> <span class="about-value">${pokemonData.height * 10} cm</span></p>
